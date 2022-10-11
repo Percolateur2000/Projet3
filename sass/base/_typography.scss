@@ -1,0 +1,95 @@
+$colour-primary : #9356DC;
+$colour-secondary : #FF79DA;
+$colour-tertiary : #99E2D0;
+$grey : rgb(240, 240, 240);
+$dark-grey : rgb(70, 70, 70);
+$titre : 'Shrikhand';
+$texte : 'Roboto';
+
+body {
+    font-size: 120%;
+    font-family: $texte;
+}
+
+h2  {
+    font-family: $titre;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav__presentation h1, .nav__presentation p {
+    margin: 10px 0 10px 0;
+}
+.nav__presentation p{
+    font-size: 25px;
+
+}
+
+
+#fonctionnement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        &__top{
+            git remote add origin git@github.com:Percolateur2000/Projet3.git width: 90%;
+}
+}
+
+.nav, #fonctionnement {
+    margin-bottom: 40px;
+}
+
+.header div, .nav__explorer, .fonctionnement__detail, .restaurant__carte {
+    box-shadow: 2px 2px 20px rgb(185, 185, 185);
+}
+
+.fonctionnement .fa-solid {
+    margin-right: 15px;
+}
+
+#restaurant {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    &__top{
+        width: 90%;
+        align-items: center;
+    }
+    h1 {
+    margin: 50px 0 30px 0;
+}
+p {
+    margin: 5px 0 0 20px;
+}
+}
+
+.footer{
+    display: flex;
+    margin: 0;
+    height: 260px;
+    background: #464646;
+    color: #fff;
+    flex-direction: column;
+    h2{
+        padding-left: 40px;
+        margin: 30px 0 10px 0;
+    }
+    li {
+        font-size: 110%;
+        list-style: none;
+        margin: 0 0 10px 0;
+    }
+}
+
+.fa-utensils {
+    margin-right: 14px;
+}
+
+.fa-handshake-angle {
+    margin-right: 6px;
+  
+}
