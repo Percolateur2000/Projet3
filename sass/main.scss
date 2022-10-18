@@ -1,8 +1,11 @@
 @import "./base/typography";
 @import "./layout/images";
+@import "./layout/animation";
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
 
 .nav{
     height: 500px;
@@ -16,51 +19,59 @@
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        height: 70px;
-        background-color: darken($grey, 7%);
+        height: 60px;
+        background-color: darken($grey, 8%);
         font-weight: normal;
-
+        font-size: larger;
     }
     .fa-location-dot{
         margin-right: 25px;
     }
     &__presentation{
         display: flex;
-        width: 75%;
-        height: 210px;
+        width: 80%;
+        height: fit-content;
         flex-direction: column;
         text-align: center;
-        padding: 40px 10px 20px 10px;
+        padding: 30px 10px 20px 10px;
+        h3{
+            font-weight: 300;
+        }
     }
     &__explorer{
         display: flex;
         flex-wrap: wrap;
         align-content: space-around;
         justify-content: space-around;
-        width: 340px;
+        width: 260px;
         height: 70px;
         border-radius: 40px;
-        background: linear-gradient(to bottom right, $colour-secondary, $colour-primary);
+        @include linear-gradient;
         color: white;
-        font-size: 25px;
+        padding: 0 40px 0 40px;
     }
 }
 
 .fonctionnement {
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-around;
     &__detail {
-        font-size: 24px;
         width: 85%;
-        height: 22%;
+        height: 25%;
         display: flex;
         align-items: center;
-        gap: 0.4cm ;
+        gap: 0.3cm ;
         border-radius: 30px;
         background: $grey;
+        &__select{
+            background: lighten($colour-primary, 33%);
+            .fa-solid {
+            color: $colour-primary;
+            }
+        }
         &__chiffre{
             display: flex;
             height: 32px;
@@ -79,9 +90,10 @@
     }
 }
 
+
 #restaurant {
     background: #f8f8f8;
-    height: 1800px;
+    height: 1700px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -89,3 +101,97 @@
     padding-bottom: 30px;
 }
 
+.menu{
+    background: $grey;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6cm;
+    height: fit-content;
+    align-items: center;
+        &--titre{
+        width: 90%;
+        margin-top: 10px;
+        height: 70px;
+        padding-bottom: 10px;
+        span{
+            padding-bottom: 7px;
+            border-bottom: solid 4px $colour-tertiary;
+        }
+        h2{
+            font-weight: 300;
+            font-size: 26px;
+        }
+    }
+    &__carte{
+        background: #fff;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        max-height: 180px;
+        width: 95%;
+        justify-content: space-between;
+        overflow: hidden;
+    &--detail{
+        padding: 10px 0 10px 0;
+        display: flex;
+        height: 100%;
+        min-width: 80%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &--prix{
+        display: flex;
+        height: 100%;
+        width: 20%;
+        justify-self: end;
+        align-self: end;
+        margin: 0 10px 10px 0;
+        justify-content: flex-end;
+        h3{
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    &--coche{
+        display: flex;
+        background: $colour-tertiary;
+        .fa-solid{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0%;
+            color: #fff;
+            min-width: 0px;
+        }
+    }
+}
+}
+
+.commander{
+    display: flex;
+    height: 180px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    background: $grey;
+    padding-top: 80px;
+    a{
+        width: 35%;
+    }
+}
+
+.loading{
+    opacity: 1;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: $colour-primary;
+        img{
+    width: 50vw;        }
+}

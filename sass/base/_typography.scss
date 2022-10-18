@@ -1,18 +1,40 @@
 $colour-primary : #9356DC;
 $colour-secondary : #FF79DA;
 $colour-tertiary : #99E2D0;
+
+$ligth-purple : lighten($colour-primary, 50%);
 $grey : rgb(240, 240, 240);
 $dark-grey : rgb(70, 70, 70);
+
 $titre : 'Shrikhand';
 $texte : 'Roboto';
 
+@mixin linear-gradient {
+    background: linear-gradient(to bottom right, $colour-secondary, $colour-primary);
+}
+
 body {
-    font-size: 120%;
     font-family: $texte;
 }
 
-h2  {
+h1  {
     font-family: $titre;
+    font-size: 36px;
+}
+
+p, li {
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3{
+    font-size: 22px;
 }
 
 a {
@@ -20,21 +42,12 @@ a {
     color: black;
 }
 
-.nav__presentation h1, .nav__presentation p {
-    margin: 10px 0 10px 0;
-}
-.nav__presentation p{
-    font-size: 25px;
-
-}
-
-
 #fonctionnement {
     display: flex;
     flex-direction: column;
     align-items: center;
         &__top{
-            git remote add origin git@github.com:Percolateur2000/Projet3.git width: 90%;
+        width: 90%;
 }
 }
 
@@ -42,12 +55,18 @@ a {
     margin-bottom: 40px;
 }
 
-.header div, .nav__explorer, .fonctionnement__detail, .restaurant__carte {
+.header {
+    box-shadow: 2px 2px 20px rgb(185, 185, 185);
+}
+
+.header, .nav__explorer, .fonctionnement__detail, .restaurant__carte, .menu__carte {
     box-shadow: 2px 2px 20px rgb(185, 185, 185);
 }
 
 .fonctionnement .fa-solid {
     margin-right: 15px;
+    font-size: 160%;
+    color: darken($grey, 50%);
 }
 
 #restaurant {
@@ -62,26 +81,26 @@ a {
     h1 {
     margin: 50px 0 30px 0;
 }
-p {
-    margin: 5px 0 0 20px;
-}
 }
 
 .footer{
     display: flex;
     margin: 0;
-    height: 260px;
+    height: 280px;
     background: #464646;
     color: #fff;
     flex-direction: column;
-    h2{
+    h1{
         padding-left: 40px;
         margin: 30px 0 10px 0;
+        font-size: 30px;
     }
     li {
-        font-size: 110%;
         list-style: none;
-        margin: 0 0 10px 0;
+        margin: 0 0 12px 0;
+    }
+    a {
+        color: #fff;
     }
 }
 
@@ -91,5 +110,29 @@ p {
 
 .fa-handshake-angle {
     margin-right: 6px;
-  
+  }
+
+.menu__carte--detail h3{
+    margin: 0 0 5px 0;
+}
+
+.menu__carte--detail p {
+    margin: 0;
+}
+
+.menu h4, .menu h3, .menu p{
+    padding-left: 20px;
+}
+
+.menu h4{
+    font-weight: normal;
+}
+
+.menu-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5cm;
+    width: 100%;
+    height: 100%;
 }
